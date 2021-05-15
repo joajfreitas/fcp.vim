@@ -6,7 +6,7 @@ syntax keyword fcpKeyword device message signal config command
 
 syntax keyword fcpFunction id type size str sat dlc period
 
-syntax match fcpComment "\/\*(\*(?!\/)|[^*])*\*\/"
+syntax match fcpComment "\v\/\*(\*(?!\/)|[^*])*\*\/"
 
 highlight link fcpKeyword Keyword
 highlight link fcpFunction Function
