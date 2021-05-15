@@ -15,7 +15,7 @@ syn region fcpCommentBlock             matchgroup=fcpCommentBlock         start=
 
 syntax region fcpString start=/\v"/ skip=/\v\\./ end=/\v"/
 
-syn match     fcpDecNumber   display "\<[0-9][0-9_]*"
+syn match     fcpDecNumber   display "\<[0-9\.][0-9\._]*"
 
 highlight link fcpKeyword Keyword
 highlight link fcpFunction Function
