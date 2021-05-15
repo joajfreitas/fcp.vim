@@ -44,10 +44,10 @@ highlight link fcpFunction Function
 highlight link fcpComment Comment
 hi def link fcpTodo		Todo
 hi def link fcpCommentBlock   Comment
-hi def link cNumber		Number
-hi def link cOctal		Number
-hi def link cOctalZero		PreProc	 " link this to Error if you want
-hi def link cFloat		Float
+hi def link fcpNumber		Number
+hi def link fcpOctal		Number
+hi def link fcpOctalZero		PreProc	 " link this to Error if you want
+hi def link fcpFloat		Float
 
 
 let b:current_syntax = "fcp"
