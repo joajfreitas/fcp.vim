@@ -6,8 +6,6 @@ syntax keyword fcpKeyword device message signal config command
 
 syntax keyword fcpFunction id type size str sat dlc period
 
-syntax match fcpComment "\v\/\*(\*(?!\/)|[^*])*\*\/"
-
 syn keyword	fcpTodo		contained TODO FIXME XXX
 
 " cCommentGroup allows adding matches for special things in comments
