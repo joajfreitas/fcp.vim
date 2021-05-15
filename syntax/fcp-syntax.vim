@@ -2,6 +2,7 @@ if exists("b:current_syntax")
     finish
 endif
 
-echom "Our syntax highlighting code will go here."
+syntax keyword fcpKeyword device config command
+highlight link fcpKeyword Keyword
 
 let b:current_syntax = "fcp"
