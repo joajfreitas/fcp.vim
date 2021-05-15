@@ -8,8 +8,16 @@ syntax keyword fcpFunction id type size str sat dlc period
 
 syntax match fcpComment "\v\/\*(\*(?!\/)|[^*])*\*\/"
 
+syn keyword	fcpTodo		contained TODO FIXME XXX
+
+" cCommentGroup allows adding matches for special things in comments
+syn cluster	fcpCommentGroup	contains=fcpTodo
+
+
 highlight link fcpKeyword Keyword
 highlight link fcpFunction Function
 highlight link fcpComment Comment
+hi def link fcpTodo		Todo
+
 
 let b:current_syntax = "fcp"
