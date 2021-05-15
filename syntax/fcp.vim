@@ -34,7 +34,6 @@ syn match	fcpFloat		display contained "\d\+e[-+]\=\d\+[fl]\=\>"
 syn match	fcpFloat		display contained "0x\x*\.\x\+p[-+]\=\d\+[fl]\=\>"
 "hexadecimal floating point number, with leading digits, optional dot, with exponent
 syn match	fcpFloat		display contained "0x\x\+\.\=p[-+]\=\d\+[fl]\=\>"
-endif
 
 " flag an octal number with wrong digits
 syn match	cOctalError	display contained "0\o*[89]\d*"
