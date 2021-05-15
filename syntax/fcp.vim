@@ -12,45 +12,18 @@ syn keyword	fcpTodo		contained TODO FIXME XXX
 syn cluster	fcpCommentGroup	contains=fcpTodo
 syn region fcpCommentBlock             matchgroup=fcpCommentBlock         start="/\*\%(!\|\*[*/]\@!\)\@!" end="\*/" contains=fcpTodo,@Spell
 
-"integer number, or floating point number without a dot and with "f".
-syn case ignore
-syn match	fcpNumbers	display transparent "\<\d\|\.\d" contains=cNumber,cFloat,cOctalError,cOctal
-" Same, but without octal error (for comments)
-syn match	fcpNumbersCom	display contained transparent "\<\d\|\.\d" contains=cNumber,cFloat,cOctal
-syn match	fcpNumber		display contained "\d\+\(u\=l\{0,2}\|ll\=u\)\>"
-"hex number
-syn match	fcpNumber		display contained "0x\x\+\(u\=l\{0,2}\|ll\=u\)\>"
-" Flag the first zero of an octal number as something special
-syn match	fcpOctal		display contained "0\o\+\(u\=l\{0,2}\|ll\=u\)\>" contains=cOctalZero
-syn match	fcpOctalZero	display contained "\<0"
-syn match	fcpFloat		display contained "\d\+f"
-"floating point number, with dot, optional exponent
-syn match	fcpFloat		display contained "\d\+\.\d*\(e[-+]\=\d\+\)\=[fl]\="
-"floating point number, starting with a dot, optional exponent
-syn match	fcpFloat		display contained "\.\d\+\(e[-+]\=\d\+\)\=[fl]\=\>"
-"floating point number, without dot, with exponent
-syn match	fcpFloat		display contained "\d\+e[-+]\=\d\+[fl]\=\>"
-"hexadecimal floating point number, optional leading digits, with dot, with exponent
-syn match	fcpFloat		display contained "0x\x*\.\x\+p[-+]\=\d\+[fl]\=\>"
-"hexadecimal floating point number, with leading digits, optional dot, with exponent
-syn match	fcpFloat		display contained "0x\x\+\.\=p[-+]\=\d\+[fl]\=\>"
 
 syntax region fcpString start=/\v"/ skip=/\v\\./ end=/\v"/
 
-" flag an octal number with wrong digits
-syn match	cOctalError	display contained "0\o*[89]\d*"
-syn case match
+syn match     fcpDecNumber   display "\<[0-9][0-9_]*\%([iu]\%(size\|8\|16\|32\|64\|128\)\)\="
 
 highlight link fcpKeyword Keyword
 highlight link fcpFunction Function
 highlight link fcpComment Comment
 hi def link fcpTodo		Todo
 hi def link fcpCommentBlock   Comment
-hi def link fcpNumber		Number
-hi def link fcpOctal		Number
-hi def link fcpOctalZero		PreProc	 " link this to Error if you want
-hi def link fcpFloat		Float
 highlight link fcpString String
+highlight link fcpDecNumber Number
 
 
 let b:current_syntax = "fcp"
