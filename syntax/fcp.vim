@@ -35,6 +35,8 @@ syn match	fcpFloat		display contained "0x\x*\.\x\+p[-+]\=\d\+[fl]\=\>"
 "hexadecimal floating point number, with leading digits, optional dot, with exponent
 syn match	fcpFloat		display contained "0x\x\+\.\=p[-+]\=\d\+[fl]\=\>"
 
+syntax region fcpString start=/\v"/ skip=/\v\\./ end=/\v"/
+
 " flag an octal number with wrong digits
 syn match	cOctalError	display contained "0\o*[89]\d*"
 syn case match
@@ -48,6 +50,7 @@ hi def link fcpNumber		Number
 hi def link fcpOctal		Number
 hi def link fcpOctalZero		PreProc	 " link this to Error if you want
 hi def link fcpFloat		Float
+highlight link fcpString String
 
 
 let b:current_syntax = "fcp"
