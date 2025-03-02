@@ -4,11 +4,10 @@ local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 parser_config.fcp = {
 	install_info = {
 		url = "https://github.com/joajfreitas/fcp-core",
-		branch = "update_treesitter",
 		files = { "src/parser.c" },
 		location = "tree-sitter=fcp",
 		generate_requires_npm = false,
-		requires_generate_from_grammar = false,
+		requires_generate_from_grammar = true,
 	},
 	filetype = "fcp",
 }
