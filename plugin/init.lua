@@ -5,9 +5,9 @@ parser_config.fcp = {
 	install_info = {
 		url = "https://github.com/joajfreitas/fcp-core",
 		files = { "src/parser.c" },
-		location = "tree-sitter=fcp",
+		location = "tree-sitter-fcp",
 		generate_requires_npm = false,
-		requires_generate_from_grammar = true,
+		requires_generate_from_grammar = false,
 	},
 	filetype = "fcp",
 }
